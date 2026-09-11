@@ -1,6 +1,8 @@
-# Running Labtainer on MacBook Pro M3 using UTM
+# Running Labtainers on Apple Silicon Macs (M1/M2/M3/M4) using UTM
 
-This guide explains how to set up and run **Labtainer**, a Linux-based cybersecurity lab environment, on a MacBook Pro M3 using **UTM**. Labtainer is typically not available for ARM, so this setup involves emulating an x86 environment. Thanks to this guide, NPS has officially provided a QCOW2 image, allowing users to skip several setup steps.
+This guide explains how to set up and run **Labtainer**, a Linux-based cybersecurity lab environment, on an Apple Silicon Mac (M1, M2, M3 or M4) using **UTM**. Labtainer is typically not available for ARM, so this setup involves emulating an x86 environment. Thanks to this guide, NPS has officially provided a QCOW2 image, allowing users to skip several setup steps.
+
+> **About this copy.** This guide was originally written by [CamilYed](https://github.com/CamilYed/Labtainer-ARM-mac) for a MacBook Pro M3. This fork carries corrections for the current UTM: choose **Emulate** (not Virtualize), leave **UEFI Boot** disabled, and set **Network Mode** to **Emulated VLAN**. Verified on an M2 (2026-09) with those exact settings; the Naval Postgraduate School's Labtainers page links here.
 
 ---
 
@@ -112,7 +114,7 @@ This command creates a file called `labtainer-utm-vm.qcow2`, which is compatible
 
 ### Step 6: Configure the VM Settings
 
-For my setup on a MacBook Pro M3 with 36 GB of RAM, I used the following configuration:
+On the original author's MacBook Pro M3 (36 GB RAM) the following configuration was used; the same settings were verified on an M2:
 
 1. **System**:
     - **Architecture**: Set to **x86_64** (even though your Mac is ARM, UTM can emulate x86).
