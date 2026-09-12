@@ -19,10 +19,24 @@ There are two ways to run Labtainers on an Apple Silicon Mac. They differ mainly
 
 **Rule of thumb:** if your course is covered by the arm64 labs, use Option A. Otherwise use Option B; it is the same image NPS supports for everyone, it just runs slower on Apple Silicon.
 
+### Minimum requirements
+
+The appliance runs a full Linux desktop plus Docker containers, so it needs real headroom on the Mac. The VM itself is configured for **4 CPU cores and 8 GB of RAM**; leave the rest for macOS.
+
+| | Minimum | Recommended |
+|---|---|---|
+| Mac | Any Apple Silicon (M series) | Apple Silicon with performance cores to spare |
+| macOS | 13 (Ventura) | Current release |
+| RAM | 16 GB | 32 GB (a 16 GB Mac works but is tight while the 8 GB VM and macOS both run) |
+| Free disk | ~40 GB | 60 GB or more (the download is ~5 GB, expands to a ~40 GB disk, and each lab pulls its Docker images on first run) |
+
+> **Poor experience, or can't meet these?** Emulation (Option B) is slow by design, and an underpowered or low-memory Mac makes even the native appliance sluggish. Rather than fight it locally, run Labtainers **in the cloud** — the official Labtainers Student Guide documents ready-made cloud VMs (for example on Microsoft Azure), so your Mac only needs a browser or SSH client. See the **cloud deployment** section of the [Labtainers Student Guide](https://nps.edu/web/c3o/labtainers) on the NPS site.
+
 ---
 
 ## Table of Contents
 1. [Which option should I use?](#which-option-should-i-use)
+    - [Minimum requirements](#minimum-requirements)
 2. [For students](#for-students)
     - [Option A: native arm64 appliance (fast)](#option-a-native-arm64-appliance-fast)
         - [Which hypervisor? (UTM, VirtualBox, VMware Fusion)](#which-hypervisor-utm-virtualbox-vmware-fusion)
