@@ -62,9 +62,9 @@ The same appliance is published in three formats in that folder. UTM is what thi
 
 | Hypervisor | File | Cost / account | Snapshots |
 |---|---|---|---|
-| **UTM** (this guide) | `.utm.zip` | Free. No account. | **No snapshot feature** in UTM's interface. To be able to roll back, keep a copy of the unzipped `.utm` bundle (or the original `.zip`) before you start working, and restore from it if the VM gets into a bad state. |
-| **VirtualBox** (7.1 or newer for Apple Silicon) | `.ova` | Free. No account. | Yes. Take a snapshot after the first boot and before each lab session so you can roll back. |
-| **VMware Fusion** | `.ova` | Free for personal use, but the download requires a Broadcom account (email sign-up). | Yes. Same advice as VirtualBox. |
+| **[UTM](https://mac.getutm.app/)** (this guide) | `.utm.zip` | Free. No account. Download from [mac.getutm.app](https://mac.getutm.app/) or the [GitHub releases](https://github.com/utmapp/UTM/releases/latest). | **No snapshot feature** in UTM's interface. To be able to roll back, keep a copy of the unzipped `.utm` bundle (or the original `.zip`) before you start working, and restore from it if the VM gets into a bad state. |
+| **[VirtualBox](https://www.virtualbox.org/wiki/Downloads)** (7.1 or newer for Apple Silicon) | `.ova` | Free. No account. Download the macOS / Apple Silicon build from [virtualbox.org/wiki/Downloads](https://www.virtualbox.org/wiki/Downloads). | Yes. Take a snapshot after the first boot and before each lab session so you can roll back. |
+| **[VMware Fusion](https://www.vmware.com/products/desktop-hypervisor/workstation-and-fusion)** | `.ova` | Free for personal use, but the download requires a Broadcom account (email sign-up) at the [Broadcom support portal](https://support.broadcom.com/group/ecx/productdownloads?subfamily=VMware%20Fusion). | Yes. Same advice as VirtualBox. |
 
 Whichever you choose, import the appliance as-is; do not change its CPU architecture (aarch64) or memory below 8 GB.
 If the VM loses its network after the Mac sleeps or changes Wi-Fi, shut it down and start it again. Do not switch the network mode away from **Emulated VLAN**.
