@@ -15,7 +15,7 @@ There are two ways to run Labtainers on an Apple Silicon Mac. They differ mainly
 | UTM mode | **Virtualize** (Apple's hypervisor runs arm64 code directly) | **Emulate** (QEMU translates x86_64 instructions in software) |
 | Speed | Near native. Boots in seconds; labs feel like a local Linux box. | Slow. Expect a boot measured in minutes and sluggish desktop and Docker work, since every instruction is translated. Usable, but plan for it. |
 | Lab coverage | Only labs whose Docker images have been published for arm64. Your instructor will tell you whether your course is covered. | Every Labtainers lab, exactly as on x86 hardware. |
-| Where to get it | Download the `.utm.zip` from the NPS OneDrive folder: [Labtainers arm64 appliance](https://nps01-my.sharepoint.com/:f:/g/personal/spencer_dollahite_nps_edu/IgAZgs-majINRZLvHu-oPPj0AQei1zJ9S0xHeJThBPQamjE) (or the copy your instructor gives you). | Hosted by NPS today: [nps.edu/web/c3o/virtual-machine-images](https://nps.edu/web/c3o/virtual-machine-images) |
+| Where to get it | Public download: [NPS OneDrive folder](https://nps01-my.sharepoint.com/:f:/g/personal/spencer_dollahite_nps_edu/IgAZgs-majINRZLvHu-oPPj0AQei1zJ9S0xHeJThBPQamjE) -- the UTM bundle (`.utm.zip`), plus the same appliance as `.qcow2` and `.ova` for other hypervisors. | Hosted by NPS today: [nps.edu/web/c3o/virtual-machine-images](https://nps.edu/web/c3o/virtual-machine-images) |
 
 **Rule of thumb:** if your course is covered by the arm64 labs, use Option A. Otherwise use Option B; it is the same image NPS supports for everyone, it just runs slower on Apple Silicon.
 
@@ -44,11 +44,11 @@ Open the `.dmg` file and drag UTM to your Applications folder.
 
 ### Option A: native arm64 appliance (fast)
 
-> **Download:** the appliance (`.utm.zip` + its `.sha256` checksum) is in the NPS OneDrive folder [Labtainers arm64 appliance](https://nps01-my.sharepoint.com/:f:/g/personal/spencer_dollahite_nps_edu/IgAZgs-majINRZLvHu-oPPj0AQei1zJ9S0xHeJThBPQamjE). Your instructor may also hand you a copy directly. If your course is not covered by the arm64 labs, use [Option B](#option-b-official-x86_64-qcow2-image-slower-all-labs).
+> **Download:** the appliance is publicly hosted in the [NPS OneDrive folder](https://nps01-my.sharepoint.com/:f:/g/personal/spencer_dollahite_nps_edu/IgAZgs-majINRZLvHu-oPPj0AQei1zJ9S0xHeJThBPQamjE): take the `.utm.zip` for UTM (this guide), or the `.qcow2` / `.ova` if you use another hypervisor. Each file has a `.sha256` checksum beside it. If your course is not covered by the arm64 labs, use [Option B](#option-b-official-x86_64-qcow2-image-slower-all-labs).
 
 The appliance is a ready-made UTM bundle (a `.utm.zip` file). Everything is pre-configured: **Virtualize**, **aarch64**, 4 cores, 8 GB RAM, UEFI boot, **Emulated VLAN** networking, and clipboard sharing with macOS. You do not create a VM by hand.
 
-1. **Verify the download** against the `.sha256` file in the same folder (or the checksum your instructor gave you). In Terminal: `shasum -a 256 ~/Downloads/<file>.utm.zip` and compare.
+1. **Verify the download** against the `.sha256` file beside it in the folder. In Terminal: `shasum -a 256 ~/Downloads/<file>.utm.zip` and compare.
 2. **Unzip** the file. You get a `.utm` bundle.
 3. **Double-click the `.utm` bundle** (or in UTM choose **File > Open**). UTM imports it into its library.
 4. **Start the VM** and log in with the credentials supplied with the download.
