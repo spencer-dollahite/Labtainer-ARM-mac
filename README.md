@@ -25,6 +25,7 @@ There are two ways to run Labtainers on an Apple Silicon Mac. They differ mainly
 1. [Which option should I use?](#which-option-should-i-use)
 2. [For students](#for-students)
     - [Option A: native arm64 appliance (fast)](#option-a-native-arm64-appliance-fast)
+        - [Which hypervisor? (UTM, VirtualBox, VMware Fusion)](#which-hypervisor-utm-virtualbox-vmware-fusion)
     - [Option B: official x86_64 QCOW2 image (slower, all labs)](#option-b-official-x86_64-qcow2-image-slower-all-labs)
 3. [For instructors and lab designers: building the image yourself](#for-instructors-and-lab-designers-building-the-image-yourself)
     - [Preparing the Labtainer Image Manually](#preparing-the-labtainer-image-manually)
@@ -54,6 +55,18 @@ The appliance is a ready-made UTM bundle (a `.utm.zip` file). Everything is pre-
 4. **Start the VM** and log in with the credentials supplied with the download.
 5. Open a terminal and run your course's lab exactly as your instructor describes. The first start of each lab pulls its arm64 Docker images, so it needs internet access; later starts are offline-capable.
 
+
+#### Which hypervisor? (UTM, VirtualBox, VMware Fusion)
+
+The same appliance is published in three formats in that folder. UTM is what this guide walks through; the `.ova` works in VirtualBox or VMware Fusion if you already use one of those.
+
+| Hypervisor | File | Cost / account | Snapshots |
+|---|---|---|---|
+| **UTM** (this guide) | `.utm.zip` | Free. No account. | **No snapshot feature** in UTM's interface. To be able to roll back, keep a copy of the unzipped `.utm` bundle (or the original `.zip`) before you start working, and restore from it if the VM gets into a bad state. |
+| **VirtualBox** (7.1 or newer for Apple Silicon) | `.ova` | Free. No account. | Yes. Take a snapshot after the first boot and before each lab session so you can roll back. |
+| **VMware Fusion** | `.ova` | Free for personal use, but the download requires a Broadcom account (email sign-up). | Yes. Same advice as VirtualBox. |
+
+Whichever you choose, import the appliance as-is; do not change its CPU architecture (aarch64) or memory below 8 GB.
 If the VM loses its network after the Mac sleeps or changes Wi-Fi, shut it down and start it again. Do not switch the network mode away from **Emulated VLAN**.
 
 ### Option B: official x86_64 QCOW2 image (slower, all labs)
