@@ -1,6 +1,6 @@
-# Running Labtainers on Apple Silicon Macs (M1/M2/M3/M4) using UTM
+# Running Labtainers on Apple Silicon (M series) Macs using UTM
 
-This guide explains how to run **Labtainers**, the Linux-based cybersecurity lab environment from the Naval Postgraduate School (NPS), on an Apple Silicon Mac (M1, M2, M3 or M4) using **UTM**.
+This guide explains how to run **Labtainers**, the Linux-based cybersecurity lab environment from the Naval Postgraduate School (NPS), on an Apple Silicon (M series) Mac using **UTM**.
 
 > **About this copy.** This guide was originally written by [CamilYed](https://github.com/CamilYed/Labtainer-ARM-mac) for a MacBook Pro M3. This fork carries corrections for the current UTM (choose **Emulate**, not Virtualize, for the x86_64 image; leave **UEFI Boot** disabled; set **Network Mode** to **Emulated VLAN**), verified on an M2 (2026-09), and adds the native arm64 appliance option. The NPS Labtainers page links here.
 
